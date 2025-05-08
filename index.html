@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Interaktif Drainase Desa - Mitigasi Banjir</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Peta Drainase Desa</h2>
+                <p class="subtitle">Sistem Informasi Mitigasi Banjir</p>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="filter-section">
+                    <h3>Filter Data</h3>
+                    <div class="filter-group">
+                        <label for="conditionFilter">Kondisi Saluran</label>
+                        <select id="conditionFilter" onchange="filterMap()">
+                            <option value="all">Semua Kondisi</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Tersumbat">Tersumbat</option>
+                            <option value="Rusak">Rusak</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="riskFilter">Risiko Banjir</label>
+                        <select id="riskFilter" onchange="filterMap()">
+                            <option value="all">Semua Risiko</option>
+                            <option value="Tinggi">Tinggi</option>
+                            <option value="Sedang">Sedang</option>
+                            <option value="Rendah">Rendah</option>
+                        </select>
+                    </div>
+                    <button class="reset-btn" onclick="resetFilter()">
+                        <i class="fas fa-sync-alt"></i> Reset Filter
+                    </button>
+                </div>
+                
+                <div class="stats-section">
+                    <h3>Statistik</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue-100 text-blue-600">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalChannels">0</span>
+                                <span class="stat-label">Saluran</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-red-100 text-red-600">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalFloodAreas">0</span>
+                                <span class="stat-label">Area Rawan</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-green-100 text-green-600">
+                                <i class="fas fa-people-arrows"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalEvacPoints">0</span>
+                                <span class="stat-label">Titik Kumpul</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalProposals">0</span>
+                                <span class="stat-label">Usulan Sumur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Informasi</h3>
+                    <p>Peta ini menampilkan sistem drainase, area rawan banjir, dan usulan perbaikan di Desa X untuk mendukung mitigasi banjir.</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>Dikembangkan oleh Mahasiswa KKN Universitas Semarang 2025</p>
+                <p><i class="fas fa-envelope"></i> rafihana25@gmail.com</p>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
