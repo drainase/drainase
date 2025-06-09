@@ -1,4 +1,4 @@
-/* Base Styles */
+/* Ganti seluruh isi style.css Anda dengan ini */
 :root {
   --primary-color: #2563eb;
   --secondary-color: #1e40af;
@@ -89,376 +89,63 @@ body {
 }
 
 /* Filter Section */
-.filter-section {
-  margin-bottom: 1.5rem;
-}
-
-.filter-section h3, 
-.stats-section h3, 
-.info-section h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #111827;
-}
-
-.filter-group {
-  margin-bottom: 1rem;
-}
-
-.filter-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #4b5563;
-}
-
-.filter-group select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  background-color: white;
-  transition: border-color 0.2s;
-}
-
-.filter-group select:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.reset-btn {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background-color 0.2s;
-}
-
-.reset-btn:hover {
-  background-color: var(--secondary-color);
-}
+.filter-section { margin-bottom: 1.5rem; }
+.filter-section h3, .stats-section h3, .info-section h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: #111827; }
+.filter-group { margin-bottom: 1rem; }
+.filter-group label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500; color: #4b5563; }
+.filter-group select { width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem; font-size: 0.875rem; background-color: white; transition: border-color 0.2s; }
+.filter-group select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+.reset-btn { width: 100%; padding: 0.75rem; background-color: var(--primary-color); color: white; border: none; border-radius: 0.5rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: background-color 0.2s; }
+.reset-btn:hover { background-color: var(--secondary-color); }
 
 /* Stats Section */
-.stats-section {
-  margin-bottom: 1.5rem;
-}
+.stats-section { margin-bottom: 1.5rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.stat-card { background: white; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 1rem; }
+.stat-icon { width: 3rem; height: 3rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+.stat-value { font-size: 1.25rem; font-weight: 600; display: block; }
+.stat-label { font-size: 0.75rem; color: var(--gray-dark); }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+/* Info Section & Tombol WhatsApp */
+.info-section { margin-bottom: 1.5rem; }
+.info-section p { font-size: 0.875rem; color: #4b5563; }
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
 }
+.whatsapp-btn:hover { background-color: #1DA851; }
+.whatsapp-btn i { font-size: 1.25rem; }
 
-.stat-card {
-  background: white;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+/* Toggle Buttons */
+.sidebar-toggle { position: fixed; top: 20px; left: 26px; z-index: 1001; background: white; color: var(--primary-color); width: 3rem; height: 3rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; }
+.sidebar.open ~ .sidebar-toggle { left: 420px; }
+.sidebar-toggle:hover { transform: scale(1.05); }
 
-.stat-icon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.stat-value {
-  font-size: 1.25rem;
-  font-weight: 600;
-  display: block;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  color: var(--gray-dark);
-}
-
-/* Info Section */
-.info-section {
-  margin-bottom: 1.5rem;
-}
-
-.info-section p {
-  font-size: 0.875rem;
-  color: #4b5563;
-}
-
-/* Toggle Button */
-.sidebar-toggle {
-  position: fixed;
-  top: 20px;
-  left: 26px;
-  z-index: 1001;
-  background: white;
-  color: var(--primary-color);
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.sidebar.open ~ .sidebar-toggle {
-  left: 420px;
-}
-
-.sidebar-toggle:hover {
-  transform: scale(1.05);
-}
+#layers-toggle { position: fixed; top: 20px; right: 26px; z-index: 1001; background: white; color: var(--primary-color); width: 3rem; height: 3rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; }
+#layers-toggle:hover { transform: scale(1.05); }
 
 /* Leaflet Popup Styles */
-.leaflet-popup-content-wrapper {
-  border-radius: 0.5rem;
-  padding: 0;
-}
-
-.leaflet-popup-content {
-  max-width: 400px;
-  margin: 0;
-  padding: 1rem;
-  font-size: 0.875rem;
-}
-
-.leaflet-popup-content h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-
-.leaflet-popup-content img {
-  max-width: 100%;
-  margin-top: 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.popup-content p {
-  margin-bottom: 0.5rem;
-}
-
-.street-view-btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.street-view-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-  position: relative;
-  margin: 2% auto;
-  padding: 0;
-  width: 90%;
-  height: 90%;
-  max-width: 1200px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  z-index: 2001;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: #bbb;
-}
-
-#streetViewContainer {
-  width: 100%;
-  height: 100%;
-  background-color: #f0f0f0;
-}
-
-#mapOverlay {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 250px;
-  height: 200px;
-  background: white;
-  z-index: 1000;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
+.leaflet-popup-content-wrapper { border-radius: 0.5rem; padding: 0; }
+.leaflet-popup-content { max-width: 400px; margin: 0; padding: 1rem; font-size: 0.875rem; }
+.leaflet-popup-content h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+.leaflet-popup-content img { max-width: 100%; margin-top: 0.5rem; border-radius: 0.25rem; }
+.popup-content p { margin-bottom: 0.5rem; }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
-  .sidebar {
-      width: 360px;
-      left: -360px;
-  }
-  
-  .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .sidebar.open ~ .sidebar-toggle {
-      left: 380px;
-  }
-  
-  .sidebar.open ~ #map {
-      transform: translateX(360px);
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-      width: 320px;
-      left: -320px;
-  }
-  
-  .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-  }
-  
-  .sidebar.open ~ .sidebar-toggle {
-      left: 340px;
-  }
-  
-  .stats-grid {
-      grid-template-columns: 1fr;
-  }
-  
-  .sidebar.open ~ #map {
-      transform: translateX(320px);
-  }
-  
-  .sidebar-content {
-      padding: 1.25rem;
-  }
-  
-  .modal-content {
-      width: 95%;
-      height: 95%;
-  }
-  
-  #mapOverlay {
-      width: 200px;
-      height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-      width: 280px;
-      left: -280px;
-  }
-  
-  .sidebar.open ~ .sidebar-toggle {
-      left: 300px;
-  }
-  
-  .sidebar.open ~ #map {
-      transform: translateX(280px);
-  }
-  
-  .sidebar-content {
-      padding: 1rem;
-  }
-  
-  .sidebar-header {
-      padding: 1rem;
-  }
-  
-  .sidebar-header h2 {
-      font-size: 1.25rem;
-  }
-  
-  .stat-card {
-      padding: 0.75rem;
-  }
-  
-  .stat-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1rem;
-  }
-  
-  .stat-value {
-      font-size: 1rem;
-  }
-  
-  #mapOverlay {
-      width: 150px;
-      height: 120px;
-  }
-}
-
-@media (max-width: 360px) {
-  .sidebar {
-      width: 260px;
-      left: -260px;
-  }
-  
-  .sidebar.open ~ .sidebar-toggle {
-      left: 280px;
-  }
-  
-  .sidebar.open ~ #map {
-      transform: translateX(260px);
-  }
-  
-  .sidebar-toggle {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1rem;
-  }
-  
-  #mapOverlay {
-      width: 120px;
-      height: 100px;
-  }
-}
+@media (max-width: 1024px) { .sidebar { width: 360px; left: -360px; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .sidebar.open ~ .sidebar-toggle { left: 380px; } .sidebar.open ~ #map { transform: translateX(360px); } }
+@media (max-width: 768px) { .sidebar { width: 320px; left: -320px; } .stats-grid { grid-template-columns: 1fr; gap: 0.75rem; } .sidebar.open ~ .sidebar-toggle { left: 340px; } .sidebar.open ~ #map { transform: translateX(320px); } .sidebar-content { padding: 1.25rem; } }
+@media (max-width: 480px) { .sidebar { width: 280px; left: -280px; } .sidebar.open ~ .sidebar-toggle { left: 300px; } .sidebar.open ~ #map { transform: translateX(280px); } .sidebar-content { padding: 1rem; } .sidebar-header { padding: 1rem; } .sidebar-header h2 { font-size: 1.25rem; } .stat-card { padding: 0.75rem; } .stat-icon { width: 2.5rem; height: 2.5rem; font-size: 1rem; } .stat-value { font-size: 1rem; } #layers-toggle { width: 2.5rem; height: 2.5rem; font-size: 1rem; top: 15px; right: 15px; } .sidebar-toggle { top: 15px; left: 15px; } }
+@media (max-width: 360px) { .sidebar { width: 260px; left: -260px; } .sidebar.open ~ .sidebar-toggle { left: 280px; } .sidebar.open ~ #map { transform: translateX(260px); } .sidebar-toggle { width: 2.5rem; height: 2.5rem; font-size: 1rem; } }
+.leaflet-top.leaflet-right { top: 80px; }
+@media (max-width: 480px) { .leaflet-top.leaflet-right { top: 70px; } }
