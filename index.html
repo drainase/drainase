@@ -17,7 +17,7 @@
 
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2>Peta Drainase Desa</h2>
+                <h2>Peta Digital Drainase</h2>
                 <p class="subtitle">Sistem Informasi Mitigasi Banjir</p>
             </div>
             
@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="riskFilter">Risiko Banjir</label>
+                        <label for="riskFilter">Risiko</label>
                         <select id="riskFilter" onchange="filterMap()">
                             <option value="all">Semua Risiko</option>
                             <option value="Tinggi">Tinggi</option>
@@ -91,7 +91,7 @@
                 
                 <div class="info-section">
                     <h3>Informasi</h3>
-                    <p>Peta ini menampilkan sistem drainase, area rawan banjir, dan usulan perbaikan di Desa X untuk mendukung mitigasi banjir.</p>
+                    <p>Peta ini menampilkan sistem drainase, area rawan banjir, dan usulan perbaikan di RW 07 Kelurahan Kemijen untuk mendukung mitigasi banjir.</p>
                 </div>
             </div>
             
@@ -102,9 +102,18 @@
         </div>
 
         <div id="map"></div>
+        
+        <div id="streetViewModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div id="streetViewContainer" style="width:100%;height:calc(100% - 40px);"></div>
+                <div id="mapOverlay" style="position:absolute; top:20px; right:20px; width:250px; height:200px; background:white; z-index:1000; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.2);"></div>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjG_X7Q27kis2_xV3-zrnUS7xbxgqFkaU&libraries=streetview"></script>
     <script src="script.js"></script>
 </body>
 </html>
